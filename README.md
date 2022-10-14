@@ -1,6 +1,6 @@
 #  IS 2022 Group 4
 
- > *„Bad programmers worry about the code. Good programmers worry about data structures and their relationships.“ (Linus Torvalds)*
+ > *„Good programmers worry about data structures and their relationships.“* -- *[Linus Torvalds](https://lwn.net/Articles/193245)*
 
 ## Course 
 
