@@ -8,21 +8,21 @@
 
 |   Function    | Array (Time) | Linked List (Time) |
 | ----------- | -----------     |----------- |
-| insertFirst      | O(n)       |  O(1)       | 
-| insertLast   | O(n)          | O(1)       | 
+| insertFirst      | O(n)       |  **O(1)**       | 
+| insertLast   | O(n)          |  **O(1)**       | 
+| insertAfter   | O(n)          |  **O(1)**       | 
 | insertAtIndex      | O(n)       | O(n)       | 
-| insertAfter   | O(n)          | O(1)       | 
 ||||
-| deleteFirst      | O(n)       | O(1)       | 
-| deleteLast   | O(n)          | O(1)       | 
-| deleteAtIndex      | O(n)       | O(n)       | 
-| deleteAfter   | O(n)          | O(1)       | 
+| deleteFirst      | O(n)       |  **O(1)**       | 
+| deleteLast   | O(n)          |  **O(1)**       |  
+| deleteAfter   | O(n)          |  **O(1)**       | 
+| deleteAtIndex      | O(n)       | O(n)       |
 |||| 
-| updateAtIndex   | O(1)         | O(n)       | 
+| updateAtIndex   |  **O(1)**      | O(n)       | 
 ||||
-| getFirst   | O(1)             | O(1)       | 
-| getLast   | O(1)              | O(1)       | 
-| getAtIndex   | O(1)           | O(n)       | 
+| getFirst   |  **O(1)**           |  **O(1)**       | 
+| getLast   |  **O(1)**              |  **O(1)**       | 
+| getAtIndex   |  **O(1)**           | O(n)       | 
 
 NB: ^ Не амортизирани сложности
 
