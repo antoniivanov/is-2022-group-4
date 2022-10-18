@@ -14,7 +14,7 @@
 | insertAtIndex      | O(n)       | O(n)       | 
 ||||
 | deleteFirst      | O(n)       |  **O(1)**       | 
-| deleteLast   | O(n)          |  **O(1)**       |  
+| deleteLast   | O(n)          |  **O(n)**       |  
 | deleteAfter   | O(n)          |  **O(1)**       | 
 | deleteAtIndex      | O(n)       | O(n)       |
 |||| 
