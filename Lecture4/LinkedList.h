@@ -53,6 +53,7 @@ public:
             this->tail = node;
         } else {
             this->tail->next = node;
+            node->prev = this->tail; 
             this->tail = node;
         }
     }
@@ -91,21 +92,20 @@ public:
         if (this->head == nullptr) {
             throw std::runtime_error("deleting from Empty list");
         }
+        int value;
         if (this->head != this->tail) {
-            Node *prev = this->head;
-            while (prev->next != this->tail) {
-                prev = prev->next;
-            }
+            Node *prev = this->tail->prev;
             prev->next = nullptr;
-            int value = this->tail->val;
+             value = this->tail->val;
             delete this->tail;
             this->tail = prev ;
         } else {
+            value = this->head->val;
             delete this->head ;
             this->head = nullptr;
             this->tail = nullptr;
         }
-
+        return value;
     }
     
 

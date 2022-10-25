@@ -16,3 +16,6 @@ NB: ^ Не амортизирани сложности
 
 
 ## Домашно  
+* Reverse a list using singly linked list .
+* If too hard: try reverse a list with doubly link list first 
+* Implementa all methods as a doubly linked list in LinkedList.h
