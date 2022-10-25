@@ -5,11 +5,11 @@
 
 ## Function/Complexity matrix
 
-|   Function    | Array (Time) | Linked List (Time) |
-| ----------- | -----------     |----------- |
-| deleteFirst      | O(n)       |  **O(N)** ???       | 
-| deleteLast   | O(n)          |  **O(1)**       |  
-| deleteAfter   | O(n)          |  **O(1)**       | 
+|   Function    | Array (Time) | Singly Linked List (Time) |Singly Linked List (Time) |
+| ----------- | -----------     |----------- |----------- |
+| deleteFirst      | O(n)       |  **O(N)**        |  **O(1)**        | 
+| deleteLast   | O(n)          |  **O(1)**       |   **O(1)**       |  
+| deleteAfter   | O(n)          |  **O(1)**       |   **O(1)**       | 
 
 NB: ^ Не амортизирани сложности
 
