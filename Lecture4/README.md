@@ -7,8 +7,8 @@
 
 |   Function    | Array (Time) | Singly Linked List (Time) |Doubly Linked List (Time) |
 | ----------- | -----------     |----------- |----------- |
-| deleteFirst      | O(n)       |  **O(N)**        |  **O(1)**        | 
-| deleteLast   | O(n)          |  **O(1)**       |   **O(1)**       |  
+| deleteFirst      | O(n)       |  **O(1)**        |  **O(1)**        | 
+| deleteLast   | O(n)          |  **O(N)**       |   **O(1)**       |  
 | deleteAfter   | O(n)          |  **O(1)**       |   **O(1)**       | 
 
 NB: ^ Не амортизирани сложности
