@@ -5,7 +5,7 @@
 
 ## Function/Complexity matrix
 
-|   Function    | Array (Time) | Singly Linked List (Time) |Singly Linked List (Time) |
+|   Function    | Array (Time) | Singly Linked List (Time) |Doubly Linked List (Time) |
 | ----------- | -----------     |----------- |----------- |
 | deleteFirst      | O(n)       |  **O(N)**        |  **O(1)**        | 
 | deleteLast   | O(n)          |  **O(1)**       |   **O(1)**       |  
