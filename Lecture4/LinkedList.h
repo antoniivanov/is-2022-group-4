@@ -260,9 +260,16 @@ void test_removeLast() {
 
 int main()
 {
-    test_insertFirst();
-    test_insertLast();
-    test_insertAfter();
-    
+    test_insertFirst_toEmptyList()
+    test_insertFirst_toListWithOneElement ()  
+        
+    test_insertLast_toEmptyList () 
+    test_insertLast_toListWithOneElement ()  
+        
+    test_insertAfter_toEmptyList ()  
+    test_insertAfter_toListWithOneElement()
+    test_insertAfter_firstElement()
+    test_insertAfter()
+
     return 0;
 }
