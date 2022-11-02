@@ -158,24 +158,80 @@ LinkedList create_test_list( std::initializer_list<int> list )
     return test_list;
 }
 
-void test_insertFirst () {
+void test_insertFirst_toEmptyList () {
+    std::cout << "test_insertFirst\n";
+    LinkedList test;
+    
+    test.insertFirst(12);
+    
+    assert (std::vector<int>({12}) == test.to_vector());
+}
+
+
+
+
+void test_insertFirst_toListWithOneElement () {
     std::cout << "test_insertFirst\n";
     LinkedList test;
     test.insertFirst(12);
-    assert (std::vector<int>({12}) == test.to_vector());
     
     test.insertFirst(14);
+    
     assert (std::vector<int>({14, 12}) == test.to_vector());
 }
 
-void test_insertLast () {
+
+
+void test_insertLast_toEmptyList () {
     std::cout << "test_insertLast\n";
     LinkedList test;
+    
     test.insertLast(12);
-    assert (std::vector<int>({12}) == test.to_vector());
+    
+    assert (std::vector<int>({12}) == test.to_vector()); 
+}
+
+void test_insertLast_toListWithOneElement () {
+    std::cout << "test_insertLast\n";
+    LinkedList test;
+    test.insertLast(12); 
     
     test.insertLast(14);
+    
     assert (std::vector<int>({12, 14}) == test.to_vector());
+}
+
+void test_insertAfter_toEmptyList () {
+    std::cout << "test_insertAfter\n";
+    LinkedList test;
+    
+    test.insertAfter(10, nullptr);
+    
+    assert (std::vector<int>({}) == test.to_vector());
+}
+
+
+void test_insertAfter_toListWithOneElement  () {
+    std::cout << "test_insertAfter\n";
+    LinkedList test;
+    test.insertLast(12);
+    
+    test.insertAfter(10, test.get_node_at_index(0));
+    
+    assert (std::vector<int>({12, 10}) == test.to_vector());
+}
+
+
+void test_insertAfter_firstElement  () {
+    std::cout << "test_insertAfter\n";
+    LinkedList test;
+    
+    test.insertLast(12); 
+    test.insertLast(10); 
+    
+    test.insertAfter(14, test.get_node_at_index(0));
+    
+    assert (std::vector<int>({12, 14, 10}) == test.to_vector());
 }
 
 void test_insertAfter () {
