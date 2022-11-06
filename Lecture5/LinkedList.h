@@ -9,15 +9,17 @@ using namespace std;
 
 #include <stdexcept>
 
+
+
 template <typename T>
 struct Node {
     T val;
-    Node* next;
-    Node* prev; // TODO: implement double linked list
+    Node<T>* next;
+    Node<T>* prev; // TODO: implement double linked list
     Node() : val(T()), next(nullptr) {}
 
     Node(T x) : val(T()), next(nullptr) {}
-    Node(T x, Node* next) : val(x), next(next) {}
+    Node(T x, Node<T>* next) : val(x), next(next) {}
 };
 
 template <typename T>
@@ -33,7 +35,7 @@ public:
 
     ~LinkedList() {
         while (this->head != nullptr) {
-            Node* toDelete = this->head; 
+            Node<T>* toDelete = this->head; 
             this->head = this->head->next; 
             delete toDelete;
         }
@@ -41,7 +43,7 @@ public:
 
     void insertFirst(T value) {
         
-        Node* node = new Node(value, this->head);
+        Node<T>* node = new Node<T>(value, this->head);
         this->head = node;
         if (this->tail == nullptr) {
             this->tail = node;
@@ -49,7 +51,7 @@ public:
     }
 
     void insertLast(T value) {
-        Node* node = new Node(value, nullptr);
+        Node<T>* node = new Node<T>(value, nullptr);
         if (this->tail == nullptr) {
             this->head = node;
             this->tail = node;
@@ -60,14 +62,14 @@ public:
         }
     }
 
-    void insertAfter(T value, Node* iterator) {
+    void insertAfter(T value, Node<T>* iterator) {
         // insert after
         if (iterator == nullptr) {
             // do nothing
             return;
         }
         
-        Node* node = new Node(value);
+        Node<T>* node = new Node<T>(value);
         node->next = iterator->next;
         iterator->next = node;
 
@@ -82,7 +84,7 @@ public:
             throw std::invalid_argument( "Removing element from an empty list." );
         }
 
-        Node* tmp = this->head;
+        Node<T>* tmp = this->head;
         this->head = this->head->next;
         T value = tmp->val;
         delete tmp;
@@ -96,7 +98,7 @@ public:
         }
         T value;
         if (this->head != this->tail) {
-            Node *prev = this->tail->prev;
+            Node<T>* prev = this->tail->prev;
             prev->next = nullptr;
              value = this->tail->val;
             delete this->tail;
@@ -111,7 +113,7 @@ public:
     }
     
 
-    T removeAfter(Node* iterator) {
+    T removeAfter(Node<T>* iterator) {
         // we assume iterator is part of the list
         if (this->head == nullptr) {
             throw std::runtime_error("deleting from Empty list ");
@@ -119,7 +121,7 @@ public:
         if (iterator == nullptr or iterator->next == nullptr) {
             throw std::runtime_error("No element found to remove ");
         }
-        Node* toDelete = iterator->next ;
+        Node<T>* toDelete = iterator->next ;
         iterator->next = toDelete->next ;
         if (this->tail == toDelete) {
             this->tail = iterator;
@@ -130,7 +132,7 @@ public:
     }
     
     std::vector<T> to_vector() {
-        Node* current = this->head;
+        Node<T>* current = this->head;
         std::vector<T> v;
         while (current != nullptr) {
             v.push_back(current->val);
@@ -139,8 +141,8 @@ public:
         return v;
     }
     
-    Node* get_node_at_index(T index) {
-        Node* current = this->head; 
+    Node<T>* get_node_at_index(T index) {
+        Node<T>* current = this->head; 
         while (current != nullptr && index > 0) {
             index--;
             current = current->next;
@@ -149,18 +151,16 @@ public:
     }
 
 
-
     class Iterator;
   
-    Iterator<t> begin() {
-        return Iterator<T>(this->head);
+    Iterator begin() {
+        return Iterator(this->head);
     }
   
-    Iterator<T> end() {
-        return Iterator<T>(nullptr);
+    Iterator end() {
+        return Iterator(nullptr);
     }
 
-    template<typename T>
     class Iterator
     {
     public:
@@ -170,7 +170,7 @@ public:
         Iterator(const Node<T>* node) noexcept :
             current_node (node) { }
     
-        Iterator& operator=(Node* node) {
+        Iterator& operator=(Node<T>* node) {
             this->current_node = node;
             return *this;
         }
@@ -178,7 +178,7 @@ public:
         // Prefix ++ overload
         Iterator& operator++() {
             if (current_node)
-                current_node = current_node->pNext;
+                current_node = current_node->next;
             return *this;
         }
 
@@ -198,14 +198,12 @@ public:
         }
     
     private:
-            const Node* current_node;
+            const Node<T>* current_node;
     };
 
 
 
 };
-
-
 
 
 
