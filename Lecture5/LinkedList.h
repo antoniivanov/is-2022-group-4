@@ -308,6 +308,21 @@ void test_insertAfter () {
     assert (std::vector<int>({12, 14, 10}) == test.to_vector());
 }
 
+void test_iterator() {
+    LinkedList<int> l;
+    l.insertFirst(12);
+    l.insertFirst(122); 
+    int expected[2] = { 12, 122 } ;
+    
+    // if iterator is implemented properly the for loop would work: 
+    int i = 0;
+    for (auto x: l) {
+        assert (x == expected[i]);
+        ++i;
+    }
+
+}
+
 void test_removeFirst() {
     // TODO
 }
