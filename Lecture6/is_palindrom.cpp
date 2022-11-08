@@ -25,7 +25,7 @@ public:
         but modifies inplace the linked list so it may not be suitable for multi-threaded code.
         
 
-        mid = find_middle(head);
+        mid = find_middle(head); 
         reversed_second_part = reverse(mid);
         compare(head, mid, reversed_second_part);
         reverse(reversed_second_part);
@@ -51,6 +51,7 @@ private :
     }
 
     ListNode* copy_list(ListNode* head) {
+        // dummy start, also known as https://en.wikipedia.org/wiki/Sentinel_node
         ListNode start(0);
         ListNode* prev = &start;
         while(head != nullptr) {
