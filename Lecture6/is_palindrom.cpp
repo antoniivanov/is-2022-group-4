@@ -39,7 +39,7 @@ public:
         ]*/
     }
 
-private :
+private:
 
     ListNode* copy_list_recursive(ListNode* head) {
         if (head == nullptr) {
