@@ -8,6 +8,7 @@
 * https://leetcode.com/problems/palindrome-linked-list/
 
  
+Kahoot: https://create.kahoot.it/share/data-structure-6/76f521f2-7514-4d33-95b9-986ab021704c
 
 ## Домашно  
 * Всичките домашни които не са били направени досега.
