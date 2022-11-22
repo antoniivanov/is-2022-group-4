@@ -11,6 +11,7 @@
 - Visualising data structures and algorithms through animation : 
     - https://visualgo.net/en
     - http://cathyatseneca.github.io/DSAnim
+    - https://adhilton.pratt.duke.edu/sites/adhilton.pratt.duke.edu/files/u37/iticse-7steps.pdf
  
 - **http://google.com** !
 
