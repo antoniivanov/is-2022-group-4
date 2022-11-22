@@ -10,6 +10,7 @@ Don’t skip this step, ever!
 * What is the input? What is the desired output?
 * What are the expected side effects?
 * Which assumptions are underlying the problem? 
+* Break down the problem into subproblems. 
 
 Then the seven steps to problem soving described in
  
