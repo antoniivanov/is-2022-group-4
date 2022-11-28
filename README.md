@@ -8,6 +8,9 @@
 
 ## Steps to problem solving 
 
+![seven-steps](https://user-images.githubusercontent.com/2536458/204288258-6b0fbbf0-ace9-4753-b53e-c38f1ec64775.jpg)
+
+
 **Step 0 - Understand the problem**
 
 Don’t skip this step, ever!
