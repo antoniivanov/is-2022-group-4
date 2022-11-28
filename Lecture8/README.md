@@ -21,4 +21,4 @@ Then the seven steps to problem soving described in
     
 ## Домашно   
 
-* Answer the questions from Section 5 - https://visualgo.net/en/list?slide=4
+* Answer the questions from Section 4 - https://visualgo.net/en/list?slide=4
