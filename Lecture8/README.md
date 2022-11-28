@@ -20,3 +20,5 @@ Then the seven steps to problem soving described in
 - https://adhilton.pratt.duke.edu/sites/adhilton.pratt.duke.edu/files/u37/iticse-7steps.pdf
     
 ## Домашно   
+
+* Answer the questions from Section 5 - https://visualgo.net/en/list?slide=4
