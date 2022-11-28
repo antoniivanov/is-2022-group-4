@@ -18,6 +18,9 @@ bool are_brackets_balanced(std::string expr) {
 
 Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window
 
+
+![wq](https://user-images.githubusercontent.com/2536458/204272046-f99c5189-5afa-4d4f-9ef7-614027eb84c0.jpg)
+
 ```
 class MovingAverage {
 private: 
@@ -38,6 +41,7 @@ public:
   }
 }
 ```
+
 
 * Calculate complexity 
 * What if we can use deque (double ended queue) . How the solution and calcualted complexity changes 
