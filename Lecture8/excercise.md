@@ -40,4 +40,11 @@ public:
 * What if we can use deque (double ended queue) . How the solution and calcualted complexity changes 
 * What if it's ciruclar queue. 
 
+# 3 Next greater element 
+
+Given an array, print the Next Greater Element (NGE) for every element. 
+
+The Next greater Element for an element a[i] is the first greater element on the right side of a[i] in the array. Elements for which no greater element exist, consider the next greater element as -1. For example for an array {4, 5, 2, 25}, we have the next greater elemetn foreach to be (4,5), (5,25), (2,25), (25,-1). The soluiton should work in linear time ( O(n) complexity where n i size of the array).
+
+
 
