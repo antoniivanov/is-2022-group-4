@@ -16,6 +16,8 @@ bool are_brackets_balanced(std::string expr) {
 
 ## 2 Moving average 
 
+Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window
+
 ```
 class MovingAverage {
 private: 
