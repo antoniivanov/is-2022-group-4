@@ -26,10 +26,11 @@ private:
 public: 
   public MovingAverage(int window_size) {
     this.window_size = window_size;
+    // What helper fields we need to be able to calculate average of  window
   }
 
   public double next(int val) {
-    // calculate the sum of the moving window
+    // return the new average of the moving window which is the the average of the last window_size elements added (including this one)
 
     return /* the new moving average*/
   }
