@@ -8,4 +8,4 @@
     
 ## Домашно   
 
-* Implement remove in exercise.cpp
+* https://leetcode.com/tag/tree with easy difficulty
