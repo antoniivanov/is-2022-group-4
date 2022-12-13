@@ -159,42 +159,77 @@ public:
     }
 };
 
+
 void test_contains_using_empty_dictionary() {
     std::cerr << "test_contains_using_empty_dictionary\n";
+    // prepare 
     Dictionary<std::string, int> d;
-    assert (d.contains("foo") == false);
+    
+    // act 
+    bool actual_value = d.contains("foo");
+    
+    // assert 
+    assert (actual_value == false);
 }
 
 void test_contains_using_few_elements_not_found() {
     std::cerr << "test_contains_using_few_elements_not_found\n";
+    // prepare 
     Dictionary<std::string, int> d;
     d.add("other", 1);
     d.add("other2", 2);
-    assert (d.contains("foo") == false);
+    
+    // act 
+    bool actual_value = d.contains("foo");
+    
+    // assert 
+    assert (actual_value == false);
 }
 
 void test_contains_using_few_element_found() {
     std::cerr << "test_contains_using_few_element_found\n";
+    // prepare 
     Dictionary<std::string, int> d;
     d.add("foo", 1);
     d.add("other2", 2);
-    assert (d.contains("foo") == true);
+    
+    // act 
+    bool actual_value = d.contains("foo");
+    
+    // assert
+    assert (actual_value == true);
 }
 
 
 void test_get_value_using_few_element_found() {
     std::cerr << "test_get_value_using_few_element_found\n";
+    // prepare 
     Dictionary<std::string, int> d;
     d.add("foo", 1);
     d.add("other2", 2);
-    assert (d.get_value("foo") == 1);
+    
+    //act  
+    int actual_value = d.get_value("foo");
+    
+    // assert 
+    assert (actual_value == 1);
 }
 
 
 void test_remove_leaf() {
+    // prepare 
     std::cerr << "test_remove_leaf\n";
     Dictionary<std::string, int> d;
-    /** TODO method */
+    d.add("5-Root", 1);
+    d.add("4-Left-leaf", 2); 
+    
+    //act 
+    d.remove("6-Right-leaf");
+    
+    //assert 
+    assert (d.contains("6-Right-leaf") == false);
+    assert (d.contains("5-Root") == true);
+    
 }
 
 
