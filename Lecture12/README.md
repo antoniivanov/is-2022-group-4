@@ -1,5 +1,21 @@
 
+
+# Полезни материали: 
+
+* https://www.geeksforgeeks.org/level-order-tree-traversal/
+
+* https://visualgo.net/en/bst
+
+
+
 # Tasks
+
+## BFS 
+
+![](https://visualgo.net/img/ripple.jpg)
+
+## 
+https://leetcode.com/problems/average-of-levels-in-binary-tree/
 
 ## Find All The Lonely Nodes
 
@@ -28,9 +44,6 @@ Explanation: Light blue nodes are lonely nodes.<br>
 Please remember that order doesn't matter, [2,6] is also an acceptable answer.<br>
 
 
-# Полезни материали: 
 
-* https://visualgo.net/en/bst
-    
 # Домашно   
  
