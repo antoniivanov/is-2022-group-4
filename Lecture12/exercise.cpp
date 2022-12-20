@@ -1,4 +1,6 @@
- template<typename T>
+#include <queue>
+
+template<typename T>
 struct Node {
     T data;   
     Node<T> *left; 
