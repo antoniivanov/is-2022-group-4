@@ -12,19 +12,20 @@ Example 1:
 
 ![](https://assets.leetcode.com/uploads/2020/06/03/e1.png)
 
-Input: root = [1,2,3,null,4]
-Output: [4]
-Explanation: Light blue node is the only lonely node.
-Node 1 is the root and is not lonely.
-Nodes 2 and 3 have the same parent and are not lonely.
+Input: root = [1,2,3,null,4]<br>
+Output: [4]<br>
+Explanation: Light blue node is the only lonely node.<br>
+Node 1 is the root and is not lonely.<br>
+Nodes 2 and 3 have the same parent and are not lonely.<br>
 
 Example 2:
+
 ![](https://assets.leetcode.com/uploads/2020/06/03/e2.png)
 
-Input: root = [7,1,4,6,null,5,3,null,null,null,null,null,2]
-Output: [6,2]
-Explanation: Light blue nodes are lonely nodes.
-Please remember that order doesn't matter, [2,6] is also an acceptable answer.
+Input: root = [7,1,4,6,null,5,3,null,null,null,null,null,2]<br>
+Output: [6,2]<br>
+Explanation: Light blue nodes are lonely nodes.<br>
+Please remember that order doesn't matter, [2,6] is also an acceptable answer.<br>
 
 
 # Полезни материали: 
