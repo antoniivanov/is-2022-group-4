@@ -41,7 +41,7 @@ Root -> L -> R -> R.L -> R.R
 
 */
 template<typename T>
-void dfs(Node<T>* root, const NodeVisitor<T> &visitor) {
+void bfs(Node<T>* root, const NodeVisitor<T> &visitor) {
     // first check base case if tree is empty - no nodes -then we have visited everything 
     ???
 
