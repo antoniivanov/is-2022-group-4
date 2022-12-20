@@ -5,7 +5,6 @@
 using namespace std;
 
 
-
 template<typename T>
 struct Node {
     T data;   
@@ -26,8 +25,7 @@ private:
 
     Node< std::pair<K, V> > *root;
 
-    // returns the node with the pass "key" and the found parent node
-    // if not such node exist then reutrns nullptr. and set parent_node to the parent where it should be inserted.
+
     Node< std::pair<K,V> >* get_node_and_parent_iterative(
                     Node< std::pair<K,V> >* root_node, 
                     const K& key, 
@@ -43,7 +41,7 @@ private:
                 }
                 current = current->left;
             }
-            // TODO line
+            else if (current->data.first < key) {
                 if (parent_node != nullptr) {
                     *parent_node = current;
                 }
@@ -64,7 +62,7 @@ private:
             return new Node< std::pair<K,V> >(data, nullptr, nullptr);
         } 
         auto value = root_node.data;
-        // TODO line
+        if (data.first > root_node.data.first) {
             root_node->right = add_helper(root_node->right, value);
         } else if (data.first < root_node.data.first) {
             root_node->left = add_helper(root_node->left, value);
@@ -91,6 +89,8 @@ public:
     void add(K key, V value) {
         std::pair<K,V> data (key, value);
         
+        //this->root = add_helper(root, data);
+        
         if (this->root == nullptr) {
             this->root = new Node< std::pair<K,V> >(data, nullptr, nullptr);
         } else {
@@ -98,9 +98,9 @@ public:
             auto found = this->get_node_and_parent_iterative(this->root, key, &parent);
             if (found == nullptr) {
                 if(parent->data.first > key) {
-                    // TODO line
+                    parent->left = new Node< std::pair<K,V> >(data, nullptr, nullptr);
                 } else {
-                    // TODO line
+                    parent->right = new Node< std::pair<K,V> >(data, nullptr, nullptr);
                 }
             } else {
                 found->data = data;
@@ -152,83 +152,55 @@ public:
             replace_child(parentOfToDelete, toDeleteNode, toDeleteNode->left);
         } else {
             auto nextInOrder = this->find_next_in_order(toDeleteNode->right);
-            // TODO line
-            // TODO line
+            nextInOrder->left = toDeleteNode->left; 
+            replace_child(parentOfToDelete, toDeleteNode, toDeleteNode->right);
         }
         delete toDeleteNode;
     }
 };
 
-
 void test_contains_using_empty_dictionary() {
     std::cerr << "test_contains_using_empty_dictionary\n";
-    // prepare 
     Dictionary<std::string, int> d;
-    
-    // act 
-    bool actual_value = d.contains("foo");
-    
-    // assert 
-    assert (actual_value == false);
+    assert (d.contains("foo") == false);
 }
 
 void test_contains_using_few_elements_not_found() {
     std::cerr << "test_contains_using_few_elements_not_found\n";
-    // prepare 
     Dictionary<std::string, int> d;
     d.add("other", 1);
     d.add("other2", 2);
-    
-    // act 
-    bool actual_value = d.contains("foo");
-    
-    // assert 
-    assert (actual_value == false);
+    assert (d.contains("foo") == false);
 }
 
 void test_contains_using_few_element_found() {
     std::cerr << "test_contains_using_few_element_found\n";
-    // prepare 
     Dictionary<std::string, int> d;
     d.add("foo", 1);
     d.add("other2", 2);
-    
-    // act 
-    bool actual_value = d.contains("foo");
-    
-    // assert
-    assert (actual_value == true);
+    assert (d.contains("foo") == true);
 }
 
 
 void test_get_value_using_few_element_found() {
     std::cerr << "test_get_value_using_few_element_found\n";
-    // prepare 
     Dictionary<std::string, int> d;
     d.add("foo", 1);
     d.add("other2", 2);
-    
-    //act  
-    int actual_value = d.get_value("foo");
-    
-    // assert 
-    assert (actual_value == 1);
+    assert (d.get_value("foo") == 1);
 }
 
 
 void test_remove_leaf() {
-    // prepare 
     std::cerr << "test_remove_leaf\n";
     Dictionary<std::string, int> d;
     d.add("5-Root", 1);
-    d.add("4-Left-leaf", 2); 
-    
-    //act 
+    d.add("4-Left-leaf", 2);
+    d.add("6-Right-leaf", 3);
+    assert (d.contains("6-Right-leaf") == true);
     d.remove("6-Right-leaf");
-    
-    //assert 
     assert (d.contains("6-Right-leaf") == false);
-    assert (d.contains("5-Root") == true);
+    assert (d.contains("4-Left-leaf") == true);
     
 }
 
@@ -237,28 +209,51 @@ void test_remove_leaf() {
 void test_remove_root() {
     std::cerr << "test_remove_root\n";
     Dictionary<std::string, int> d;
-    /** TODO method */
+    d.add("5-Root", 1);
+    d.add("4-Left-leaf", 2);
+    d.add("6-Right-leaf", 3);
+    assert (d.contains("5-Root") == true);
+    d.remove("5-Root");
+    assert (d.contains("5-Root") == false);
+    assert (d.contains("4-Left-leaf") == true);
 }
 
 
 void test_remove_single_child() {
     std::cerr << "test_remove_single_child\n";
     Dictionary<std::string, int> d;
-    /** TODO method */
+    d.add("5-Root", 1);
+    d.add("4-Left", 2);
+    d.add("7-Right", 3);
+    d.add("8-RightRight", 4);
+    assert (d.contains("7-Right") == true);
+    d.remove("7-Right");
+    assert (d.contains("7-Right") == false);
 }
 
 
 void test_remove_two_children() {
     std::cerr << "test_remove_two_children\n";
     Dictionary<std::string, int> d;
-    /** TODO method */
+    d.add("5-Root", 1);
+    d.add("4-Left", 2);
+    d.add("7-Right", 3);
+    d.add("8-RightRight", 4);
+    d.add("8-RightLeft", 5);
+    assert (d.contains("7-Right") == true);
+    d.remove("7-Right");
+    assert (d.contains("7-Right") == false);
 }
 
 
 void test_remove_not_found() {
     std::cerr << "test_remove_not_found\n";
     Dictionary<std::string, int> d;
-    /** TODO method */
+    d.add("d", 1);
+    d.add("e", 2);
+    assert (d.contains("no-such") == false);
+    d.remove("foo");
+    assert (d.contains("no-such") == false);
 }
 
 int main()
