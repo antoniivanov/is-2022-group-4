@@ -6,6 +6,10 @@
 
 * Moodle course: https://learn.fmi.uni-sofia.bg/course/view.php?id=8537
 
+## Homework review 
+
+https://calendly.com/antoni-ivanov/homework-review
+
 ## Steps to problem solving 
 
 ![seven-steps](https://user-images.githubusercontent.com/2536458/204288258-6b0fbbf0-ace9-4753-b53e-c38f1ec64775.jpg)
